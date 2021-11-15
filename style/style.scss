@@ -1,0 +1,159 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  opacity: 60%;
+  height: 100vh;
+  transition: all 2s ease;
+}
+
+.main {
+  width: 80%;
+  margin: auto;
+  background: rgb(240, 240, 240);
+  height: 80vh;
+  .box {
+    // Normal Mode
+    background: green;
+    height: 5rem;
+    width: 5rem;
+    position: relative;
+    top: 4%;
+    animation: move 0s ease;
+    cursor: pointer;
+  }
+}
+
+.text {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  h1 {
+    width: 60%;
+    margin: 0rem auto;
+  }
+}
+
+.buttons {
+  width: 60%;
+  margin: 0.5rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .easy,
+  .normal,
+  .hard {
+    background: white;
+    color: gray;
+    border: 0.1 solid grey;
+    cursor: pointer;
+    font-size: 2rem;
+  }
+}
+
+.all.easy .easy {
+  background: green;
+  color: black;
+}
+.all.normal .normal {
+  background: yellow;
+  color: black;
+}
+.all.hard .hard {
+  background: red;
+  color: black;
+}
+
+.pop {
+  position: absolute;
+
+  width: 80%;
+  font-size: 4rem;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  color: black;
+  font-weight: bold;
+}
+
+.result {
+  background: black;
+  color: white;
+  position: absolute;
+  height: 40%;
+  width: 60%;
+  font-size: 3rem;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+.one.act .result {
+  display: flex;
+}
+
+h5 {
+  position: absolute;
+  top: 2%;
+  right: 1%;
+  color: grey;
+}
+.all.hard .box {
+  // Hard Mode
+  animation: move 25s linear;
+}
+
+.all.normal .box {
+  // Normal Mode
+  animation: move 40s ease;
+}
+
+.all.easy .box {
+  // Easy Mode
+  animation: move 60s ease;
+}
+
+@keyframes move {
+  0% {
+    transform: scale(01);
+
+    background-color: green;
+    left: 0px;
+    top: 20px;
+  }
+  25% {
+    transform: scale(0.8);
+
+    background-color: greenyellow;
+    left: 700px;
+    top: 20px;
+  }
+  50% {
+    transform: scale(0.6);
+
+    background-color: yellow;
+    left: 700px;
+    top: 350px;
+  }
+  75% {
+    transform: scale(0.4);
+
+    background-color: coral;
+    left: 0px;
+    top: 350px;
+  }
+  100% {
+    transform: scale(0.2);
+    background-color: red;
+    left: 0px;
+    top: 0px;
+  }
+}
